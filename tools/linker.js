@@ -297,7 +297,8 @@ _.extend(File.prototype, {
   _pathForSourceMap: function () {
     var self = this;
 
-    return self.servePath;
+    return self.servePath.charAt(0) === '/'
+      ? self.servePath.slice(1) : self.servePath;
   },
 
   // Options:
